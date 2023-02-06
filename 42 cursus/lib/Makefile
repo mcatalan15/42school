@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: victgonz <victgonz@student.42barcelona.    +#+  +:+       +#+         #
+#    By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/01/27 15:37:53 by victgonz          #+#    #+#              #
-#    Updated: 2023/01/27 16:37:15 by victgonz         ###   ########.fr        #
+#    Created: 2023/02/02 14:57:20 by mcatalan@st       #+#    #+#              #
+#    Updated: 2023/02/05 19:27:24 by mcatalan@st      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
