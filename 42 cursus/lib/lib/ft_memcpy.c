@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 10:36:31 by victgonz          #+#    #+#             */
-/*   Updated: 2023/03/08 15:59:13 by mcatalan@st      ###   ########.fr       */
+/*   Created: 2023/03/08 15:31:07 by mcatalan@st       #+#    #+#             */
+/*   Updated: 2023/03/08 15:38:03 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
-unsigned	int	ft_strlcat(char *dest, char *src, unsigned int nb)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	unsigned int    i;
-	unsigned int    dst_len;
-	unsigned int    slen;
+	unsigned char	*x;
+	unsigned char	*j;
+	size_t			i;
+
 	i = 0;
-	dst_len = ft_strlen(dest);
-	slen = ft_strlen(src);
-	if (!nb)
-			return (slen);
-	while (src[i] && dst_len + i < (nb - 1))
+	x = (unsigned char *) dst;
+	j = (unsigned char *) src;
+	if (!dst && !src)
+		return (NULL);
+	while (i < n)
 	{
-			dest[dst_len + i] = src[i];
-			i++;
+		x[i] = j[i];
+		i++;
 	}
-	dest[dst_len + i] = '\0';
-	if (dst_len > nb)
-			return (slen + nb);
-	return (slen + dst_len);
+	return (x);
 }

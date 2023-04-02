@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 10:36:31 by victgonz          #+#    #+#             */
-/*   Updated: 2023/03/08 15:59:13 by mcatalan@st      ###   ########.fr       */
+/*   Created: 2023/04/02 11:48:52 by mcatalan@st       #+#    #+#             */
+/*   Updated: 2023/04/02 11:50:06 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
-unsigned	int	ft_strlcat(char *dest, char *src, unsigned int nb)
+int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned int    i;
-	unsigned int    dst_len;
-	unsigned int    slen;
+	size_t				i;
+	const unsigned char	*str1;
+	const unsigned char	*str2;
+
 	i = 0;
-	dst_len = ft_strlen(dest);
-	slen = ft_strlen(src);
-	if (!nb)
-			return (slen);
-	while (src[i] && dst_len + i < (nb - 1))
-	{
-			dest[dst_len + i] = src[i];
-			i++;
-	}
-	dest[dst_len + i] = '\0';
-	if (dst_len > nb)
-			return (slen + nb);
-	return (slen + dst_len);
+	str1 = (const unsigned char *)s1;
+	str2 = (const unsigned char *)s2;
+	while (i < n && str1[i] == str2[i])
+		i++;
+	if (i == n)
+		return (0);
+	return (str1[i] - str2[i]);
 }

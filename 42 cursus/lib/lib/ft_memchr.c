@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 10:36:31 by victgonz          #+#    #+#             */
-/*   Updated: 2023/03/08 15:59:13 by mcatalan@st      ###   ########.fr       */
+/*   Created: 2023/04/02 11:44:24 by mcatalan@st       #+#    #+#             */
+/*   Updated: 2023/04/02 11:47:27 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
-unsigned	int	ft_strlcat(char *dest, char *src, unsigned int nb)
+void	*ft_memchr(const void *str, int c, size_t n)
 {
-	unsigned int    i;
-	unsigned int    dst_len;
-	unsigned int    slen;
+	size_t			i;
+	unsigned char	*p;
+
 	i = 0;
-	dst_len = ft_strlen(dest);
-	slen = ft_strlen(src);
-	if (!nb)
-			return (slen);
-	while (src[i] && dst_len + i < (nb - 1))
+	p = (unsigned char *)str;
+	while (i < n)
 	{
-			dest[dst_len + i] = src[i];
-			i++;
+		if (*p == (unsigned char)c)
+			return (p);
+		i++;
+		p++;
 	}
-	dest[dst_len + i] = '\0';
-	if (dst_len > nb)
-			return (slen + nb);
-	return (slen + dst_len);
+	return (NULL);
 }

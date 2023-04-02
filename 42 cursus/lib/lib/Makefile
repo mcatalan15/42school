@@ -6,7 +6,7 @@
 #    By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/04 19:10:12 by mcatalan@st       #+#    #+#              #
-#    Updated: 2023/02/06 10:28:29 by mcatalan@st      ###   ########.fr        #
+#    Updated: 2023/04/02 14:11:59 by mcatalan@st      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,8 +22,23 @@ SRCS = 	ft_isalpha.c			\
 		ft_isascii.c			\
 		ft_isprint.c			\
 		ft_strlen.c			\
-		ft_strlcat.c		\
 		ft_strlcpy.c		\
+		ft_atoi.c			\
+		ft_toupper.c		\
+		ft_memset.c			\
+		ft_bzero.c			\
+		ft_memcpy.c			\
+		ft_memmove.c		\
+		ft_strlcat.c		\
+		ft_tolower.c		\
+		ft_strchr.c			\
+		ft_strrchr.c		\
+		ft_memchr.c			\
+		ft_memcmp.c			\
+		ft_strncmp.c		\
+		ft_strnstr.c		\
+		ft_calloc.c			\
+		ft_strdup.c			\
 		# ft_lstadd_back.c 	\
 		# ft_lstadd_front.c 	\
 		# ft_lstclear.c 		\
@@ -39,28 +54,18 @@ SRCS = 	ft_isalpha.c			\
 		# ft_putendl_fd.c		\
 		# ft_isspace.c			\
 		# ft_nbrlen.c			\
-		# ft_bzero.c			\
 		# ft_calloc.c			\
-		# ft_memchr.c			\
-		# ft_memcmp.c			\
-		# ft_memcpy.c			\
-		# ft_memmove.c		\
-		# ft_memset.c			\
 		# ft_itoa.c			\
 		# ft_add_in_str.c		\
 		# ft_instr.c			\
 		# ft_split.c			\
 		# ft_strcat.c			\
-		# ft_strchr.c			\
 		# ft_strdup.c			\
 		# ft_striteri.c		\
 		# ft_strjoin.c		\
 		# ft_strmap.c			\
-		# ft_strrchr.c		\
 		# ft_strtrim.c		\
 		# ft_substr.c			\
-		# ft_tolower.c		\
-		# ft_toupper.c
 
 ##SRCSBONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 

@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/05 20:03:48 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/02/05 20:03:54 by mcatalan@st      ###   ########.fr       */
+/*   Created: 2023/02/13 10:58:39 by mcatalan@st       #+#    #+#             */
+/*   Updated: 2023/03/08 16:01:55 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
-int ft_isascii(int c)
+int	ft_toupper(int c)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
-	return (0);
+	if (c >= 'a' && 'z' >= c)
+		c = c - 32;
+	return (c);
 }

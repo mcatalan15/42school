@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: victgonz <victgonz@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 10:43:45 by victgonz          #+#    #+#             */
-/*   Updated: 2023/01/25 10:44:21 by victgonz         ###   ########.fr       */
+/*   Updated: 2023/04/02 11:41:57 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-static int start(char const *s1, char const *set)
+static int	start(char const *s1, char const *set)
 {
-	int start;
+	int	start;
 
 	start = 0;
 	while (s1[start] && ft_instr((char *)set, s1[start]))
@@ -32,12 +32,12 @@ static int	end(const char *s1, const char *set)
 	return (len);
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*str;
 	int		s;
-	int 	e;
-	
+	int		e;
+
 	if (s1)
 	{
 		s = start(s1, set);

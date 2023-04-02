@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print.c                                            :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/02 15:09:15 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/02/05 20:19:26 by mcatalan@st      ###   ########.fr       */
+/*   Created: 2023/04/02 13:51:05 by mcatalan@st       #+#    #+#             */
+/*   Updated: 2023/04/02 13:51:27 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int main ()
+int	ft_strncmp(const char *s1, char *s2, size_t n)
 {
-	ft_strlen("hola");
-	return(0);
+	while (*s1 != '\0' && *s1 == *s2 && n > 0)
+	{
+		s1++;
+		s2++;
+		n--;
+	}
+	if (n == 0)
+		return (0);
+	return (*(unsigned char *)s1 - *(unsigned char *)s2);
 }
