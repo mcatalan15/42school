@@ -3,76 +3,108 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: victgonz <victgonz@student.42barcelona.    +#+  +:+       +#+         #
+#    By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/01/27 15:37:53 by victgonz          #+#    #+#              #
-#    Updated: 2023/01/27 16:37:15 by victgonz         ###   ########.fr        #
+#    Created: 2023/02/04 19:10:12 by mcatalan@st       #+#    #+#              #
+#    Updated: 2023/04/02 14:11:59 by mcatalan@st      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-####	VARIABLES	####
-CC = gcc
+NAME = libft.a
 
-CFLAGS = -Wall -Wextra -Werror -std=c99
+BONUS = .bonus
 
-SRC_DIR = src/
+CFLAGS = -Wall -Wextra -Werror
 
-OBJ_DIR = obj/
+SRCS = 	ft_isalpha.c			\
+		ft_isdigit.c			\
+		ft_isalnum.c			\
+		ft_isascii.c			\
+		ft_isprint.c			\
+		ft_strlen.c			\
+		ft_strlcpy.c		\
+		ft_atoi.c			\
+		ft_toupper.c		\
+		ft_memset.c			\
+		ft_bzero.c			\
+		ft_memcpy.c			\
+		ft_memmove.c		\
+		ft_strlcat.c		\
+		ft_tolower.c		\
+		ft_strchr.c			\
+		ft_strrchr.c		\
+		ft_memchr.c			\
+		ft_memcmp.c			\
+		ft_strncmp.c		\
+		ft_strnstr.c		\
+		ft_calloc.c			\
+		ft_strdup.c			\
+		# ft_lstadd_back.c 	\
+		# ft_lstadd_front.c 	\
+		# ft_lstclear.c 		\
+		# ft_lstdelone.c 		\
+		# ft_lstiter.c 		\
+		# ft_lstlast.c 		\
+		# ft_lstmap.c 		\
+		# ft_lstnew.c 		\
+		# ft_lstsize.c		\
+		# ft_putchar_fd.c		\
+		# ft_putstr_fd.c		\
+		# ft_putnbr_fd.c		\
+		# ft_putendl_fd.c		\
+		# ft_isspace.c			\
+		# ft_nbrlen.c			\
+		# ft_calloc.c			\
+		# ft_itoa.c			\
+		# ft_add_in_str.c		\
+		# ft_instr.c			\
+		# ft_split.c			\
+		# ft_strcat.c			\
+		# ft_strdup.c			\
+		# ft_striteri.c		\
+		# ft_strjoin.c		\
+		# ft_strmap.c			\
+		# ft_strtrim.c		\
+		# ft_substr.c			\
 
-SRC_FILES	=	print
+##SRCSBONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
-SOURCES = 	$(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
+OBJS = $(SRCS:.c=.o)
 
-OBJECTS = 	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
+OBJSBONUS = $(SRCSBONUS:.c=.o)
 
-OBJF		=	.cache_exists
+INCLUDE = -I ./
 
-EXECUTABLE = program
+RM = rm -f
 
-INCLUDES = -I./includes/include/
+DEPS = $(SRCS:.c=.d)
 
-LIB_DIR = lib/my
+DEPS_BONUS = $(SRCSBONUS:.c=.d)
 
-LIB = -L./$(LIB_DIR) -lft
+%.o: %.c
+	${CC} ${CFLAGS} -MMD $(INCLUDE) -c $< -o $@
 
-####	COLORS	####
+all: $(NAME)
 
-DEF_COLOR = \033[0;39m
-GRAY = \033[0;90m
-RED = \033[0;91m
-GREEN = \033[0;92m
-YELLOW = \033[0;93m
-BLUE = \033[0;94m
-MAGENTA = \033[0;95m
-CYAN = \033[0;96m
-WHITE = \033[0;97m
+$(NAME): $(OBJS)
 
-#### COMMANDS ####
+	ar -rcs $(NAME) $(OBJS)
 
-all: libft $(EXECUTABLE) 
+-include $(DEPS)
 
-$(EXECUTABLE): $(OBJECTS)
-	$(CC) $(CFLAGS) $(INCLUDES) $(OBJECTS) $(LIB) -o $(EXECUTABLE)
-	@echo "$(MAGENTA)======>$(GREEN)$(EXECUTABLE) compiled! $(MAGENTA)<======$(DEF_COLOR)"
+bonus: $(BONUS)
 
+$(BONUS) : $(OBJS) $(OBJSBONUS)
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(OBJF)
-	@echo "$(MAGENTA)======>$(GREEN)Compiling: $(YELLOW)$< $(DEF_COLOR)"
-	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+	ar -rcs $(NAME) $(OBJS) $(OBJSBONUS)
 
-$(OBJF):
-		@mkdir -p $(OBJ_DIR)
+-include $(DEPS_BONUS)
 
 clean:
-	rm -f $(OBJECTS)
-	@echo "$(MAGENTA)======>$(BLUE)$(EXECUTABLE) object files cleaned!$(DEF_COLOR)"
+	$(RM) $(OBJS) $(OBJSBONUS) $(DEPS) $(DEPS_BONUS)
 
 fclean: clean
-	rm -f $(EXECUTABLE)
-	@echo "$(MAGENTA)======>$(CYAN)$(EXECUTABLE)executable files cleaned!$(DEF_COLOR)"
-	make -C $(LIB_DIR) fclean	
+	$(RM) $(NAME)
 
 re: fclean all
-
-libft:
-	make -C $(LIB_DIR)
+.PHONY: all bonus clean fclean re
