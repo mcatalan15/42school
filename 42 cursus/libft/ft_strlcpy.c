@@ -6,21 +6,11 @@
 /*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 12:44:32 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2022/12/12 12:05:33 by mcatalan@st      ###   ########.fr       */
+/*   Updated: 2023/04/04 18:53:29 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	ft_strlen(char *str)
-{
-	int	c;
-
-	c = 0;
-	while (str[c] != '\0')
-		c++;
-	return (c);
-}
+#include "libft.h"
 
 unsigned int	ft_strlcpy(char *dest, char *str, unsigned int size)
 {

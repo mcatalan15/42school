@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/07 13:26:12 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/02/13 11:45:15 by mcatalan@st      ###   ########.fr       */
+/*   Created: 2023/04/04 19:08:10 by mcatalan@st       #+#    #+#             */
+/*   Updated: 2023/04/04 19:08:41 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+int	ft_lstsize(t_list *lst)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (1);
-	return (0);
+	unsigned int	length;
+	t_list			*temp;
+
+	temp = lst;
+	length = 0;
+	while (temp != NULL)
+	{
+		temp = temp->next;
+		length++;
+	}
+	return (length);
 }

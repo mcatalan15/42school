@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/07 13:26:12 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/02/13 11:45:15 by mcatalan@st      ###   ########.fr       */
+/*   Created: 2023/04/04 18:39:22 by mcatalan@st       #+#    #+#             */
+/*   Updated: 2023/04/04 18:39:48 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+void	ft_putchar_fd(char c, int fd)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (1);
-	return (0);
+	write(fd, &c, 1);
 }

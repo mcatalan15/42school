@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/07 13:26:12 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/02/13 11:45:15 by mcatalan@st      ###   ########.fr       */
+/*   Created: 2023/04/04 18:38:28 by mcatalan@st       #+#    #+#             */
+/*   Updated: 2023/04/04 18:38:44 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (1);
-	return (0);
+	unsigned int	i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		f(i, s + i);
+		i++;
+	}
 }

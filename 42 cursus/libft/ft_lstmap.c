@@ -1,20 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/07 13:26:12 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/02/13 11:45:15 by mcatalan@st      ###   ########.fr       */
+/*   Created: 2023/04/04 19:17:19 by mcatalan@st       #+#    #+#             */
+/*   Updated: 2023/04/05 08:58:04 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (1);
-	return (0);
+	t_list	*new_lst;
+	t_list	*temp;
+
+	if (!f || !del || !lst)
+		return (NULL);
+	new_lst = NULL;
+	while (lst)
+	{
+		temp = ft_lstnew(f(lst->content));
+		if (temp == NULL)
+		{
+			ft_lstclear(&new_lst, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new_lst, temp);
+		lst = lst->next;
+	}
+	return (new_lst);
 }

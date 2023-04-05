@@ -6,16 +6,16 @@
 /*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 11:51:34 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/04/02 13:58:37 by mcatalan@st      ###   ########.fr       */
+/*   Updated: 2023/04/04 12:52:31 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strnstr(const char *haystack, const char *needle, size_t n)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 {
-	size_t i;
-	size_t j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	j = 0;

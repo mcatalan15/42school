@@ -6,7 +6,7 @@
 #    By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/04 19:10:12 by mcatalan@st       #+#    #+#              #
-#    Updated: 2023/04/02 14:11:59 by mcatalan@st      ###   ########.fr        #
+#    Updated: 2023/04/04 19:29:21 by mcatalan@st      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,11 @@ BONUS = .bonus
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = 	ft_isalpha.c			\
-		ft_isdigit.c			\
-		ft_isalnum.c			\
-		ft_isascii.c			\
-		ft_isprint.c			\
+SRCS = 	ft_isalpha.c		\
+		ft_isdigit.c		\
+		ft_isalnum.c		\
+		ft_isascii.c		\
+		ft_isprint.c		\
 		ft_strlen.c			\
 		ft_strlcpy.c		\
 		ft_atoi.c			\
@@ -39,39 +39,42 @@ SRCS = 	ft_isalpha.c			\
 		ft_strnstr.c		\
 		ft_calloc.c			\
 		ft_strdup.c			\
-		# ft_lstadd_back.c 	\
-		# ft_lstadd_front.c 	\
-		# ft_lstclear.c 		\
-		# ft_lstdelone.c 		\
-		# ft_lstiter.c 		\
-		# ft_lstlast.c 		\
-		# ft_lstmap.c 		\
-		# ft_lstnew.c 		\
-		# ft_lstsize.c		\
-		# ft_putchar_fd.c		\
-		# ft_putstr_fd.c		\
-		# ft_putnbr_fd.c		\
-		# ft_putendl_fd.c		\
-		# ft_isspace.c			\
-		# ft_nbrlen.c			\
-		# ft_calloc.c			\
-		# ft_itoa.c			\
-		# ft_add_in_str.c		\
-		# ft_instr.c			\
-		# ft_split.c			\
-		# ft_strcat.c			\
-		# ft_strdup.c			\
-		# ft_striteri.c		\
-		# ft_strjoin.c		\
-		# ft_strmap.c			\
-		# ft_strtrim.c		\
-		# ft_substr.c			\
+		ft_substr.c			\
+		ft_strjoin.c		\
+		ft_strtrim.c		\
+		ft_split.c			\
+		ft_itoa.c			\
+		ft_add_str.c		\
+		ft_num_size.c		\
+		ft_strmapi.c		\
+		ft_striteri.c		\
+		ft_putchar_fd.c		\
+		ft_putstr_fd.c		\
+		ft_putendl_fd.c		\
+		ft_putnbr_fd.c		\
+		ft_lstnew.c 		\
+		ft_lstadd_front.c 	\
+		ft_lstsize.c		\
+		ft_lstlast.c 		\
+		ft_lstadd_back.c 	\
+		ft_lstdelone.c 		\
+		ft_lstclear.c 		\
+		ft_lstiter.c 		\
+		ft_lstmap.c 		\
 
-##SRCSBONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+SRCSB = ft_lstnew.c 		\
+		ft_lstadd_front.c	\
+		ft_lstsize.c		\
+		ft_lstlast.c		\
+		ft_lstadd_back.c	\
+		ft_lstdelone.c		\
+		ft_lstclear.c		\
+		ft_lstiter.c		\
+		ft_lstmap.c			\
 
 OBJS = $(SRCS:.c=.o)
 
-OBJSBONUS = $(SRCSBONUS:.c=.o)
+OBJSBONUS = $(SRCSB:.c=.o)
 
 INCLUDE = -I ./
 
@@ -79,7 +82,7 @@ RM = rm -f
 
 DEPS = $(SRCS:.c=.d)
 
-DEPS_BONUS = $(SRCSBONUS:.c=.d)
+DEPS_BONUS = $(SRCSB:.c=.d)
 
 %.o: %.c
 	${CC} ${CFLAGS} -MMD $(INCLUDE) -c $< -o $@

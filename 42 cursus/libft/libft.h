@@ -6,7 +6,7 @@
 /*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 19:09:06 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/04/02 14:14:08 by mcatalan@st      ###   ########.fr       */
+/*   Updated: 2023/04/05 09:01:19 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct t_list
 {
 	void			*content;
 	struct t_list	*next;
-}t_list;
+}	t_list;
 
 int				ft_isalpha(int c);
 int				ft_isdigit(int c);
@@ -50,28 +50,31 @@ char			*ft_strnstr(const char *haystack, const char *needle, size_t n);
 int				ft_atoi(const char *str);
 void			*ft_calloc(size_t count, size_t size);
 char			*ft_strdup(const char *s1);
+char			*ft_substr(char const *s, unsigned int start, size_t len);
+char			*ft_strjoin(char const *s1, char const *s2);
+char			*ft_strtrim(char const *s1, char const *set);
+char			**ft_split(char const *str, char c);
+char			*ft_itoa(int n);
+void			ft_add_str(char *str, char character);
+unsigned int	ft_num_size(int num);
+char			*ft_strmapi(char const *str, char (*f)(unsigned int, char));
+void			ft_striteri(char *str, void (*f)(unsigned int, char *));
+void			ft_putchar_fd(char c, int fd);
+void			ft_putstr_fd(char *s, int fd);
+void			ft_putendl_fd(char *s, int fd);
+void			ft_putnbr_fd(int n, int fd);
+t_list			*ft_lstnew(void *content);
+void			ft_lstadd_front(t_list **lst, t_list *new);
+int				ft_lstsize(t_list *lst);
+t_list			*ft_lstlast(t_list *lst);
+void			ft_lstadd_back(t_list **lst, t_list *new);
+void			ft_lstdelone(t_list *lst, void (*del)(void *));
+void			ft_lstclear(t_list **lst, void (*del)(void *));
+void			ft_lstiter(t_list *lst, void (*f)(void *));
+t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
+					void (*del)(void *));
 // int ft_nbrlen(long int nbr);
 // int ft_instr(char *str, char c);
 // void ft_add_in_str(char *str, char c);
-// char *ft_strjoin(char const *s1, char const *s2);
-// char *ft_substr(char const *s, unsigned int start, size_t len);
-// char **ft_split(char const *str, char c);
-// char *ft_strtrim(char const *s1, char const *set);
-// char *ft_itoa(int n);
-// char *ft_strmapi(char const *str, char (*f)(unsigned int, char));
-// void ft_striteri(char *str, void (*f)(unsigned int, char *));
-// void ft_putchar_fd(char c, int fd);
-// void ft_putstr_fd(char *s, int fd);
-// void ft_putendl_fd(char *s, int fd);
-// void ft_putnbr_fd(int n, int fd);
-// t_list *ft_lstnew(void *content);
-// void ft_lstadd_front(t_list **lst, t_list *new);
-// int ft_lstsize(t_list *lst);
-// void ft_lstadd_back(t_list **lst, t_list *new);
-// void ft_lstdelone(t_list *lst, void (*del)(void *));
-// void ft_lstclear(t_list **lst, void (*del)(void *));
-// void ft_lstiter(t_list *lst, void (*f)(void *));
-// t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-// t_list *ft_lstlast(t_list *lst);
 
 #endif
