@@ -113,7 +113,7 @@ char	*read_dict(char *file, char *str)
 	close(fd);
 	return (str);
 }
-  
+
 int	bsq(char *file)
 {
 	char	**matrix;
