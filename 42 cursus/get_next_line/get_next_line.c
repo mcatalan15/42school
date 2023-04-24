@@ -6,22 +6,24 @@
 /*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 10:02:43 by mcatalan          #+#    #+#             */
-/*   Updated: 2023/04/24 10:02:21 by mcatalan@st      ###   ########.fr       */
+/*   Updated: 2023/04/24 18:56:17 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*read_file(int fd, *str)
+char	*read_file(int fd, char *str)
 {
 	char	*buffer;
-	int		numbytes;
+	int		nbytes;
 
 	buffer = malloc((BUFF_SIZE + 1) * sizeof(char));
 	if (!buffer)
-		return(NULL);
-	
+		return (NULL);
+	nbytes = 1;
 
+	free(buffer);
+	return (str);
 }
 
 char	*get_next_line(int fd)
@@ -41,4 +43,3 @@ int	main(void)
 	get_next_line(fd);
 	close(fd);
 }
-
