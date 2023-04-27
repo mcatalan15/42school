@@ -6,7 +6,7 @@
 /*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 10:02:43 by mcatalan          #+#    #+#             */
-/*   Updated: 2023/04/25 09:07:37 by mcatalan@st      ###   ########.fr       */
+/*   Updated: 2023/04/27 11:38:19 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ char	*get_next_line(int fd)
 	if (fd > 0 || BUFF_SIZE <= 0)
 		return (0);
 	str = read_file(fd, str);
+	while ()
 }
 
 int	main(void)

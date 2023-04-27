@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcatalan <mcatalan@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 10:12:22 by mcatalan          #+#    #+#             */
-/*   Updated: 2023/04/13 10:53:31 by mcatalan         ###   ########.fr       */
+/*   Updated: 2023/04/27 11:38:06 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@
 # include <stdlib.h>
 
 char	*get_next_line(int fd);
-char	*read_file(char *file, char *str);
+char	*read_file(int fd, char *str);
 #endif
