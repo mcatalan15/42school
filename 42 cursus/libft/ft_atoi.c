@@ -6,11 +6,13 @@
 /*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 16:54:08 by mcatalan          #+#    #+#             */
-/*   Updated: 2023/04/02 14:01:41 by mcatalan@st      ###   ########.fr       */
+/*   Updated: 2023/05/02 19:10:14 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/* Turn an ASCII string number to integer */
 
 int	ft_atoi(const char *str)
 {

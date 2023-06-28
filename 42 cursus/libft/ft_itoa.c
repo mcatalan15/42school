@@ -6,11 +6,13 @@
 /*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 12:55:46 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/04/04 13:02:50 by mcatalan@st      ###   ########.fr       */
+/*   Updated: 2023/05/07 12:39:20 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/* A program that convert an integer to string */
 
 static void	ft_ext_itoa(long int n, char *str)
 {
@@ -27,6 +29,8 @@ static void	ft_ext_itoa(long int n, char *str)
 	else
 		ft_add_str(str, n + 48);
 }
+
+/* This function converts an integer to */
 
 char	*ft_itoa(int n)
 {

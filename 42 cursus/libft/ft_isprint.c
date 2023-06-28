@@ -6,11 +6,13 @@
 /*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 20:09:51 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/02/13 11:45:38 by mcatalan@st      ###   ########.fr       */
+/*   Updated: 2023/05/07 12:35:46 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/* A function that check if the given integer is pritable */
 
 int	ft_isprint(int c)
 {
