@@ -6,7 +6,7 @@
 /*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 10:02:43 by mcatalan          #+#    #+#             */
-/*   Updated: 2023/06/28 20:21:41 by mcatalan@st      ###   ########.fr       */
+/*   Updated: 2023/06/29 10:48:56 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,23 +59,23 @@ char	*new_line(char *str)
 char	*readbuf(int fd, char *str)
 {
 	int		rid;
-	char	*buffer;
+	char	*buff;
 
 	rid = 1;
-	buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
-	if (!buffer)
+	buff = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	if (!buff)
 		return (ft_free(&str));
-	buffer[0] = '\0';
-	while (rid > 0 && !ft_strchr(buffer, '\n'))
+	buff[0] = '\0';
+	while (rid > 0 && !ft_strchr(buff, '\n'))
 	{
-		rid = read(fd, buffer, BUFFER_SIZE);
+		rid = read(fd, buff, BUFFER_SIZE);
 		if (rid > 0)
 		{
-			buffer[rid] = '\0';
-			str = ft_strjoin(str, buffer);
+			buff[rid] = '\0';
+			str = ft_strjoin(str, buff);
 		}
 	}
-	free(buffer);
+	free(buff);
 	if (rid == -1)
 		return (ft_free(&str));
 	return (str);
