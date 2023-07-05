@@ -6,7 +6,7 @@
 /*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 12:03:30 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/07/05 17:44:17 by mcatalan@st      ###   ########.fr       */
+/*   Updated: 2023/07/05 18:17:51 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ int	filter_flags(char c, va_list args)
 	// 	return (ft_putchar_m(va_arg(args, int)));
 	// else if (c == 'X')
 	// 	return (ft_putchar_m(va_arg(args, int)));
-	// else if (c == '%')
-	// 	return (ft_putchar_m(c));
+	else if (c == '%')
+		return (ft_putchar_m('%'));
 	return (0);
 }
 
