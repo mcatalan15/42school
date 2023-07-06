@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_m.c                                      :+:      :+:    :+:   */
+/*   ft_add_str.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/05 10:49:22 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/07/05 18:59:25 by mcatalan@st      ###   ########.fr       */
+/*   Created: 2023/04/04 12:58:06 by mcatalan@st       #+#    #+#             */
+/*   Updated: 2023/07/06 11:08:20 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "../../includes/ft_printf.h"
 
-int	ft_putstr_m(char *str)
+/* Function that add a given character to a given string */
+
+void	ft_add_str(char *str, char c)
 {
 	int	i;
-	int	error;
 
 	i = 0;
-	if (str == NULL)
-		str = "(null)";
 	while (str[i] != '\0')
-	{
-		error = ft_putchar_m(str[i]);
-		if (error == -1)
-			return (error);
 		i++;
-	}
-	return (i);
-}
+	str[i] = c;
+}	

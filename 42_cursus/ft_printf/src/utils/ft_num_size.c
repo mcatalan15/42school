@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_m.c                                      :+:      :+:    :+:   */
+/*   ft_num_size.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/05 10:49:22 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/07/05 18:59:25 by mcatalan@st      ###   ########.fr       */
+/*   Created: 2023/07/05 18:40:43 by mcatalan@st       #+#    #+#             */
+/*   Updated: 2023/07/06 11:07:53 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "../../includes/ft_printf.h"
 
-int	ft_putstr_m(char *str)
+unsigned int	ft_number_size(unsigned long long nb)
 {
-	int	i;
-	int	error;
+	unsigned long long	l;
 
-	i = 0;
-	if (str == NULL)
-		str = "(null)";
-	while (str[i] != '\0')
+	l = 0;
+	if (nb == 0)
+		return (1);
+	if (nb < 0)
+		l += 1;
+	while (nb != 0)
 	{
-		error = ft_putchar_m(str[i]);
-		if (error == -1)
-			return (error);
-		i++;
+		nb /= 10;
+		l++;
 	}
-	return (i);
+	return (l);
 }
