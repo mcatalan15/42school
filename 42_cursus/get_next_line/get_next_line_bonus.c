@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/13 10:02:43 by mcatalan          #+#    #+#             */
-/*   Updated: 2023/07/07 10:47:36 by mcatalan@st      ###   ########.fr       */
+/*   Created: 2023/06/28 10:07:12 by mcatalan@st       #+#    #+#             */
+/*   Updated: 2023/07/07 11:14:48 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*ft_free(char **str)
 {
@@ -83,18 +83,18 @@ char	*readbuf(int fd, char *str)
 
 char	*get_next_line(int fd)
 {
-	static char	*str = {0};
+	static char	*str[OPEN_MAX];
 	char		*line;
 
 	if (fd < 0)
 		return (NULL);
-	if ((str && !ft_strchr(str, '\n')) || !str)
-		str = readbuf(fd, str);
-	if (!str)
+	if ((str[fd] && !ft_strchr(str[fd], '\n')) || !str[fd])
+		str[fd] = readbuf(fd, str[fd]);
+	if (!str[fd])
 		return (NULL);
-	line = n_line(str);
+	line = n_line(str[fd]);
 	if (!line)
-		return (ft_free(&str));
-	str = clean_storage(str);
+		return (ft_free(&str[fd]));
+	str[fd] = clean_storage(str[fd]);
 	return (line);
 }

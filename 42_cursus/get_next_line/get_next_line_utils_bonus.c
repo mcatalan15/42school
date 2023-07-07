@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/13 10:12:38 by mcatalan          #+#    #+#             */
-/*   Updated: 2023/07/07 10:41:46 by mcatalan@st      ###   ########.fr       */
+/*   Created: 2023/06/28 10:07:18 by mcatalan@st       #+#    #+#             */
+/*   Updated: 2023/07/07 11:03:26 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 // ft_strjoin modif 4 get lenght besides the normal strjoin function
 
