@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
+/*   By: mcatalan <mcatalan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 10:02:43 by mcatalan          #+#    #+#             */
-/*   Updated: 2023/07/07 10:47:36 by mcatalan@st      ###   ########.fr       */
+/*   Updated: 2023/07/07 11:21:44 by mcatalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*clean_storage(char *str)
 {
 	char	*n_str;
 	char	*ptr;
-	int		len;
+	int		l;
 
 	ptr = ft_strchr(str, '\n');
 	if (!ptr)
@@ -32,10 +32,10 @@ char	*clean_storage(char *str)
 		return (ft_free(&str));
 	}
 	else
-		len = (ptr - str) + 1;
-	if (!str[len])
+		l = (ptr - str) + 1;
+	if (!str[l])
 		return (ft_free(&str));
-	n_str = ft_substr(str, len, ft_strlen(str) - len);
+	n_str = ft_substr(str, l, ft_strl(str) - l);
 	ft_free(&str);
 	if (!n_str)
 		return (NULL);
@@ -46,11 +46,11 @@ char	*n_line(char *str)
 {
 	char	*line;
 	char	*ptr;
-	int		len;
+	int		l;
 
 	ptr = ft_strchr(str, '\n');
-	len = (ptr - str) + 1;
-	line = ft_substr(str, 0, len);
+	l = (ptr - str) + 1;
+	line = ft_substr(str, 0, l);
 	if (!line)
 		return (NULL);
 	return (line);

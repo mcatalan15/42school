@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
+/*   By: mcatalan <mcatalan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 10:12:22 by mcatalan          #+#    #+#             */
-/*   Updated: 2023/07/07 10:45:28 by mcatalan@st      ###   ########.fr       */
+/*   Updated: 2023/07/07 11:21:44 by mcatalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ char	*ft_free(char **str);
 
 // get_next_line_utils.c
 char	*ft_strjoin(char *s1, char *s2);
-size_t	ft_strlen(char *str);
+size_t	ft_strl(char *str);
 char	*ft_strchr(const char *s, char c);
-char	*ft_substr(char *s, unsigned int start, size_t len);
+char	*ft_substr(char *s, unsigned int start, size_t l);
 char	*ft_strncpy(char *dest, const char *src, size_t n);
 #endif
