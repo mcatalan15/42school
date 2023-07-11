@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_add_str.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
+/*   By: mcatalan <mcatalan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/05 20:17:53 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/07/05 20:34:27 by mcatalan@st      ###   ########.fr       */
+/*   Created: 2023/04/04 12:58:06 by mcatalan@st       #+#    #+#             */
+/*   Updated: 2023/07/07 10:25:59 by mcatalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/ft_printf.h"
+#include "../includes/ft_printf.h"
 
-int	ft_strlen(const char *str)
+void	ft_add_str(char *str, char c)
 {
-	int	c;
+	int	i;
 
-	c = 0;
-	while (str[c] != '\0')
-		c++;
-	return (c);
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	str[i] = c;
 }

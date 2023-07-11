@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_add_str.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
+/*   By: mcatalan <mcatalan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/04 12:58:06 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/07/06 11:08:20 by mcatalan@st      ###   ########.fr       */
+/*   Created: 2023/02/05 20:17:53 by mcatalan@st       #+#    #+#             */
+/*   Updated: 2023/07/07 10:23:05 by mcatalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/ft_printf.h"
+#include "../includes/ft_printf.h"
 
-/* Function that add a given character to a given string */
-
-void	ft_add_str(char *str, char c)
+int	ft_strlen(const char *str)
 {
-	int	i;
+	int	c;
 
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	str[i] = c;
-}	
+	c = 0;
+	while (str[c] != '\0')
+		c++;
+	return (c);
+}

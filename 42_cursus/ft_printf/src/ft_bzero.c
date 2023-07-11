@@ -3,17 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
+/*   By: mcatalan <mcatalan@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 15:26:55 by mcatalan@st       #+#    #+#             */
-/*   Updated: 2023/07/05 20:34:05 by mcatalan@st      ###   ########.fr       */
+/*   Updated: 2023/07/07 10:26:04 by mcatalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/ft_printf.h"
-
-/* Set a block of memory to zero writing null ('\0') to each byte of the 
-block with a given void and the long size */
+#include "../includes/ft_printf.h"
 
 void	ft_bzero(void *s, size_t n)
 {
